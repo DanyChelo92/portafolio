@@ -1,0 +1,358 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: sans-serif;
+}
+
+.div-header{
+    background: rgb(37, 36, 36);  
+}
+
+.video-logo{
+    max-width: 60%;
+    display: block;
+    margin: auto;
+}
+
+.section-block{
+    padding: 80px 0 0 0;
+    min-height: calc(100vh - 120px - 60%);
+}
+
+.nav-bar{
+    background-color: rgb(41, 115, 115);
+    height: 60px;
+    display: flex;
+    position: sticky;
+    width: 100%;
+    top: 0;
+}
+
+.nav{
+    display: flex;
+    justify-content:space-between; 
+    max-width: 95%;
+    margin: 0 auto;
+}
+
+.nav-link{
+    color: white;
+    text-decoration: none;
+}
+
+.logo{
+    padding: 0 20px;
+    line-height:84px;
+}
+
+.nav-menu{
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+.nav-menu-item{
+    font-size: 16px;
+    margin: 0 5px;
+    line-height: 60px;
+    text-transform: uppercase;
+}
+
+.nav-menu-link{
+    padding: 10px 15px;
+    border-radius: 90px;
+}
+
+.nav-menu-link:hover{
+    background-color: rgb(25, 73, 73);
+    transition: 0.5s;
+}
+
+.nav-menu-link.active{
+    background-color: rgb(12, 41, 41);
+}
+
+.nav-toggle{
+    color: white;
+    background: none;
+    border: none;
+    font-size: 24px;
+    padding: 0 20 px;
+    line-height: 60px;
+    cursor: pointer;
+    display: none;
+}
+
+.footer{
+    background-color: rgb(41, 115, 115,0.8);
+    height: 60px;
+    width: 100%;
+    color: white;
+    line-height: 60px;
+    text-align: center;
+    font-size: 16px;
+    position:relative;
+}
+
+.text-photo{
+    display: flex;
+    padding: 0 10%;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+}
+
+.photo{
+    width: 200px;
+    height: auto;
+    padding-right: 20px;
+}
+
+.text{
+    text-align: start;
+    margin-left: 30px;
+    padding: auto;
+    height: auto;
+}
+
+.name{
+    font-size: 1.5em;
+    margin-bottom: 2%;
+}
+
+.presentacion{
+    font-size: 14px;
+    color: dimgray;
+    line-height: 1.4em;
+}
+
+.dow-cur{
+    color: white;
+    background-color: rgb(229, 122, 68);
+    padding: 10px;
+    border-color: rgb(196, 85, 29);
+    border-radius: 20px;
+    display: flex;
+    margin: 20px auto 30px auto;
+    cursor: pointer;
+}
+
+.link-descarga{
+    text-decoration: none;
+    color: white;
+    font-size: 1.1em;
+}
+
+.dow-cur:hover{
+    transform: scale(1.1);
+    transition: .5s;
+}
+
+.red-social-contenido{
+    width: 100%;
+    background-color: rgb(230, 230, 230);
+    height: 200px;
+    display: flex;
+}
+
+.titulos{
+    text-align: center;
+    padding: 0px;
+    font-size: 1.6em;
+}
+
+.list-redes{
+    width: 100%;
+    margin: auto;
+    padding: 0;
+}
+
+.list{
+    list-style: none;
+    display: flex;
+    padding: 0;
+    justify-content: center;
+}
+
+.list-img{
+    margin: 0 3% 0 3%;
+}
+
+.img-red{
+    width: 60px;
+    height: auto;
+}
+
+.img-red:hover{
+    transform: scale(1.3);
+    transition: .5s;
+}
+
+.redes-sociales{
+    margin: auto;
+    width: 100%;
+}
+
+hr{
+    border: 0;
+    margin:1% auto 3% auto;
+    height: 2px;
+    max-width: 80%;
+    background: linear-gradient(to right,transparent,rgb(41, 115, 115),transparent);
+}
+
+.leng-frame-herr{
+    margin: 80px auto 80px auto;
+
+}
+
+.card-conteiner{
+    max-width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 30px auto 60px ;
+}
+
+.card{
+    height: 120px;
+    margin: 15px 6%;
+}
+
+.img-card{
+    height: auto;
+    width: 100px;
+}
+
+.titulo-card{
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.registro-inicio{
+    line-height: 55px;
+    margin-left: 10px;
+}
+
+.bot-reg-ini{
+    color: white;
+    font-size: 14px;
+    background-color: rgb(229, 122, 68);
+    padding: 10px;
+    border-color: rgb(196, 85, 29);
+    border-radius: 20px;
+    cursor: pointer;
+    min-width: 90px;
+}
+
+.nombre-usuario{
+    color: rgb(223, 248, 235);
+    line-height: 60px;
+    margin: 0 5px;
+    font-style: italic;
+    font-size: 16px;
+
+}
+
+@media(max-width:768px){
+
+    .nav{
+        justify-content:baseline;
+        width: 100%;
+
+    }
+
+    .nav-bar{
+        background-color: rgb(41, 115, 115);
+        height: 60px;
+        position: fixed;
+        width: 100%;
+        top: 0;        
+    }
+
+    .video-logo{
+        max-width: 100%;
+        margin-top: 60px;
+    }
+
+    .footer{
+        height: 60px;
+        line-height: 60px;
+    }
+    
+    .nav-menu{
+        flex-direction: column;
+        align-items: center;
+        margin-right: 20px;
+        background-color: rgb(53, 66, 66);
+        position:fixed;
+        top: 60px;
+        width: 100%;
+        padding: 20px 0;
+        height: calc(100%);
+        overflow-y: auto;
+        left: 100%;
+        transition: 0.3s;
+    }
+    
+    .nav-menu-item{
+        line-height: 60px;
+    }
+    
+    .nav-menu-link:hover{
+        background:none;
+        color: rgb(38, 161, 161);
+    }
+
+    .nav-toggle{
+        display: block;
+    }
+
+    .nav-toggle:hover{
+        transform: scale(1.1);
+    }
+
+    .nav-menu_visible{
+        left: 0;
+    }
+    
+    .text-photo{
+        display:block;
+        padding: 0 10%;
+        align-items: center;
+        margin: auto;
+    }
+
+    .photo{
+        width: 150px;
+        padding: 0px;
+        display: flex;
+        margin: auto;
+    }
+
+    .text{
+        margin: 0px;
+        padding: 20px 0 0 0;
+    }
+
+    .presentacion{
+        font-size: 12px;
+    }
+    
+    .img-red{
+        width: 40px;
+        height: auto;
+    }
+
+    .redes{
+        font-size: 1.2em;
+    }
+
+    .red-social-contenido{
+        height: 150px;
+    }
+    
+}

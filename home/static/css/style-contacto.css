@@ -1,0 +1,63 @@
+.contenedor-formulario{
+    max-width: 80%;
+    width: 500px;
+    margin: 0 auto 100px;
+    border: 1px solid;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgb(0, 0, 0,0.8);
+    padding: 40px 40px 0px 40px;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    background: rgb(41, 115, 115,0.8);
+}
+
+.contenedor-formulario p{
+    text-align: center;
+    color: white;
+    padding-bottom: 20px;
+    font-size: 1.1em;
+}
+
+.elementos-form{
+    padding: 0;
+}
+
+.elementos-form li{
+    display: grid;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+}
+
+#id_nombre{
+    margin: 5px auto 15px;
+    width: 90%;
+    text-align: center;
+    padding: 5px 0;
+    font-size: 1.05em; 
+    border-radius: 20px;  
+}
+
+#id_email{
+    margin: 5px auto 15px;
+    width: 90%;
+    text-align: center; 
+    padding: 5px 0;
+    font-size: 1.05em; 
+    border-radius: 20px;  
+}
+
+#id_contenido{
+    margin: 5px auto 15px;
+    width: 90%;
+    font-size: 1.2em;
+    padding: 5px 20px; 
+    border-radius: 20px;  
+}
+
+.dow-cur.contacto{
+    padding: 10px 40px;
+    font-size: 1.1em;
+}

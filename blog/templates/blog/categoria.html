@@ -1,0 +1,39 @@
+{% extends 'home/base.html' %}
+
+{% load static %}
+
+{% block content%}
+
+    <div class="categorias">
+        <span class="link-categorias">Categorias:</span>
+            <a class="link-categorias {% if request.path == '/blog/' %} active {% endif %}" href="{% url 'blog'%}">Todas</a>
+           
+                {% for categoria in categorias_todas%}
+                  
+                    <a href="{% url 'categoria' categoria.id %}" class="link-categorias {% if request.path == '/blog/categoria/' %}active {% endif %}">{{categoria.nombre}}</a> 
+                {%endfor%}
+           
+    </div>
+
+    <section class="blog">
+        {% for blog in blogs %}
+        <a href="{% url 'contenido_blog' blog.id%}" class="links-blogs">
+            <div class="card-blog">
+                <div class="img-conteiner">
+                    <img src="{{blog.imagen.url}}" alt="" class="img-blog">
+                </div>
+                <div class="card-cont">
+                    <h3 class="titulo-card">{{blog.titulo}}</h3>
+                    <p class="p-blog">{{blog.resumen}}</p>
+                </div>
+                <div class="pie-card">
+                    <span>By: {{blog.autor}}</span>
+                    <span>{{blog.updated}}</span>
+                </div>
+            </div>  
+        </a>       
+        {% endfor %}       
+    </section>  
+ 
+
+{% endblock %}

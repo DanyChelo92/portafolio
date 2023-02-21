@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style-blog.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style-contacto.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style-proyectos.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style-autentificacion.css' %}" rel="stylesheet">
+    <title>Portafolio - Daniel Chachagua</title>
+    <link rel="shortcut icon" href="{% static 'recursos/logo-negro.png' %}">
+    <script src="https://kit.fontawesome.com/7e5b2d153f.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="div-header">
+            <video src="{% static 'recursos/videologo.mp4' %}" class="video-logo" autoplay="1" loop="true" ></video>
+        </div>
+    </header>
+    <div class="nav-bar">    
+        <nav class="nav">
+            <a href="{% url 'home'%}" class="logo nav-link"><img src="{% static 'recursos/logoblanco.png' %}" alt="" width="60px" class="logo-blanco"></a>
+            <button class="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu">
+                <li class="nav-menu-item">
+                    <a class="nav-menu-link nav-link {% if request.path == '/' %} active {% endif %}" href="{% url 'home'%}">Inicio</a>
+                </li>
+                <li class="nav-menu-item">
+                    <a class="nav-menu-link nav-link {% if request.path == '/proyectos/' %} active {% endif %}" href="{% url 'proyectos'%}">Proyectos</a>
+                </li>
+                <li class="nav-menu-item">
+                    <a class="nav-menu-link nav-link {% if request.path|slice:':6' == '/blog/' %} active {% endif %}" href="{% url 'blog'%}">Blog</a>
+                </li>
+                <li class="nav-menu-item">
+                    <a class="nav-menu-link nav-link {% if request.path == '/contacto/' %} active {% endif %}" href="{% url 'contacto'%}">Contacto</a>
+                </li>
+                {% if user.is_authenticated %}
+                <li class="nombre-usuario">Hola,{{user.username}}!!!</li>
+                <li class="nav-menu-item registro-inicio">
+                    <a href="{% url 'cerrar_sesion'%}"><button type="button" class="bot-reg-ini btn-abrir-popup-inicio" id="btn-abrir-popup-inicio">Logout</button></a>
+                </li>
+                {% else %}
+                <li class="nav-menu-item registro-inicio">
+                    <a href="{% url 'registro'%}"><button type="button" class="bot-reg-ini  btn-abrir-popup" id="btn-abrir-popup" >Registro</button></a>
+                </li>
+                <li class="nav-menu-item registro-inicio">
+                    <a href="{% url 'login'%}"><button type="button" class="bot-reg-ini btn-abrir-popup-inicio" id="btn-abrir-popup-inicio">Login</button></a>
+                </li>
+                {% endif %}
+            </ul>
+        </nav>
+    </div>    
+
+
+    <main class="section-block">
+
+    {% block content %}
+
+
+      
+
+    {% endblock %}
+    </main>
+    <footer class="footer">
+        <small>
+            <p>&#169;2023 Todos los derechos reservados</p>
+        </small>
+    </footer>    
+</body>
+<script>
+    const navToggle=document.querySelector(".nav-toggle");
+    const navMenu=document.querySelector(".nav-menu");
+    navToggle.addEventListener("click",() => {
+        navMenu.classList.toggle("nav-menu_visible");
+    });
+</script>
+
+
+</html>
+

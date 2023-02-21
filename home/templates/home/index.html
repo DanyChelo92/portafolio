@@ -1,0 +1,93 @@
+{% extends 'home/base.html' %}
+
+{% load static %}
+
+{% block content%}   
+   
+<section>
+    <div class="text-photo">
+        <img src="{% static 'recursos/foto.jpg' %}" alt="" class="photo">
+        <div class="text">
+            <h3 class="name">Daniel Macelo Chachagua Garrido</h3>
+            <p class="presentacion">
+                Hola, me llamo Daniel Chachagua. Soy de Cafayate - Salta.<br>
+                Soy estudiante de UPATECO en la Tecnicatura de Desarrollo de Software.<br>
+                Estoy dando mis primeros pasos en la programación, lo cual hago con mucho entusiasmo y dedicación.<br>
+                Y este portafolio es parte de la muestra de mis progresos...
+            </p>
+        </div>
+    </div>   
+    <button class="dow-cur"><a download="Curriculum" href="{% static "recursos/Curriculum Chachagua.pdf" %}"class="link-descarga">Descargar CV</a></button>
+</section>
+
+<section class="leng-frame-herr">
+    <div class="lenguajes">
+        <h2 class="titulos">Lenguajes</h2>
+        <hr>
+        <div class="card-conteiner">
+        {% for tecnologia in tecnologias %}
+                {% if tecnologia.categoria_id == 1%}
+                    <div class="card">
+                        <img src="{{tecnologia.imagen.url}}" alt="" class="img-card">
+                        <h3 class="titulo-card">{{tecnologia.titulo}}</h3>
+                    </div>
+                {% endif %}
+        {% endfor %}    
+        </div>  
+    <div class="frameworks">
+        <h2 class="titulos">Frameworks</h2>
+        <hr>
+        <div class="card-conteiner">
+        {% for tecnologia in tecnologias %}
+                {% if tecnologia.categoria_id == 2 %}
+                    <div class="card">
+                        <img src="{{tecnologia.imagen.url}}" alt="" class="img-card">
+                        <h3 class="titulo-card">{{tecnologia.titulo}}</h3>
+                    </div>
+                {% endif %}
+        {% endfor %}  
+        </div>  
+    </div>
+    <div class="herramientas">
+        <h2 class="titulos">Herramientas</h2>
+        <hr>
+        <div class="card-conteiner">
+        {% for tecnologia in tecnologias %}
+                {% if tecnologia.categoria_id == 3 %}
+                    <div class="card">
+                        <img src="{{tecnologia.imagen.url}}" alt="" class="img-card">
+                        <h3 class="titulo-card">{{tecnologia.titulo}}</h3>
+                    </div>
+                {% endif %} 
+        {% endfor %}
+        </div>  
+    </div>      
+</section>    
+
+<section class="red-social-contenido">
+    <div class="redes-sociales">
+            <h2 class="titulos">Redes</h2>
+            <hr>  
+        <div class="list-redes">
+            <ul class="list">
+                <li class="list-img"><a href="https://github.com/DanyChelo92" target="_blank">
+                    <img src="{% static "recursos/github.png" %}" alt="" class="img-red">
+                </a></li>
+                <li class="list-img"><a href="https://www.linkedin.com/in/danielmarcelochachagua/" target="_blank">
+                    <img src="{% static "recursos/linkedin.png" %}" alt="" class="img-red">
+                </a></li>
+                <li class="list-img"><a href="mailto:danielmchachagua@gmail.com?Subject=Contacto%20desde%20portafolio">
+                    <img src="{% static "recursos/gmail.png" %}" alt="" class="img-red"></a></li>
+                <li class="list-img"><a href="https://api.whatsapp.com/send?phone=3868460329&text=Hola!%20me%20gustar%C3%ADa%20contactarme%20contigo." target="_blank">
+                    <img src="{% static "recursos/whatsapp.png" %}" alt="" class="img-red">
+                </a></li>
+                <li class="list-img"><a href="https://msng.link/o/?DanyChelo=tg" target="_blank">
+                    <img src="{% static "recursos/telegram.png" %}" alt="" class="img-red">
+                </a></li>
+            </ul>
+        </div>
+    </div>
+    </section>
+
+
+{% endblock %}

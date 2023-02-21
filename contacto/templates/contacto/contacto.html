@@ -1,0 +1,48 @@
+{% extends 'home/base.html' %}
+
+{% load static %}
+
+{% block content%}
+    
+<div class="contenedor-formulario">
+    <h2 class="tit-form-ini">Contáctame</h2>
+    {% if "valido" in request.GET %}
+    <p>Información enviada correctamente, gracias!!! &#128512</p>
+    {% elif "no_valido" in request.GET%}
+    <p>La información no pudo ser enviada, disculpe. &#128546</p>    
+    {% endif %}
+    <form action="" method="post">
+        {% csrf_token %}
+        <ul class="elementos-form">{{formulario_contacto.as_ul}}</ul>
+        <input type="submit" value="Enviar" class="dow-cur contacto">
+    </form>    
+</div>
+
+<section class="red-social-contenido">
+    <div class="redes-sociales">
+            <h2 class="titulos">Redes</h2>
+            <hr>  
+        <div class="list-redes">
+            <ul class="list">
+                <li class="list-img"><a href="https://github.com/DanyChelo92" target="_blank">
+                    <img src="{% static "recursos/github.png" %}" alt="" class="img-red">
+                </a></li>
+                <li class="list-img"><a href="https://www.linkedin.com/in/danielmarcelochachagua/" target="_blank">
+                    <img src="{% static "recursos/linkedin.png" %}" alt="" class="img-red">
+                </a></li>
+                <li class="list-img"><a href="mailto:danielmchachagua@gmail.com?Subject=Contacto%20desde%20portafolio">
+                    <img src="{% static "recursos/gmail.png" %}" alt="" class="img-red"></a></li>
+                <li class="list-img"><a href="https://api.whatsapp.com/send?phone=3868460329&text=Hola!%20me%20gustar%C3%ADa%20contactarme%20contigo." target="_blank">
+                    <img src="{% static "recursos/whatsapp.png" %}" alt="" class="img-red">
+                </a></li>
+                <li class="list-img"><a href="https://msng.link/o/?DanyChelo=tg" target="_blank">
+                    <img src="{% static "recursos/telegram.png" %}" alt="" class="img-red">
+                </a></li>
+            </ul>
+        </div>
+    </div>
+    </section>
+   
+ 
+
+{% endblock %}

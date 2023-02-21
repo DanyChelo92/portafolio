@@ -1,0 +1,17 @@
+{% extends 'home/base.html' %}
+
+{% load static %}
+
+{% block content%}
+   
+    <div class="contenedor-formulario">
+        <h2 class="tit-form-ini">Resgistro</h2>
+        <form method="post" action="" class="elementos-form">{% csrf_token %}
+            {{form.as_ul}}
+        </fomr>
+        <button type="submit" class="dow-cur"> Resgistrarse</button>
+    </div>    
+   
+ 
+
+{% endblock %}

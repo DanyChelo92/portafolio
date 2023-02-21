@@ -1,0 +1,52 @@
+{% extends 'home/base.html' %}
+
+{% load static %}
+
+{% block content%}
+
+
+<div class="categorias">
+    <span class="link-categorias">Categorias:</span>
+        <a class="link-categorias {% if request.path == '/proyectos/' %} active {% endif %}" href="{% url 'proyectos'%}">Todas</a>
+       
+        {% for herramienta in herramientas_todas%}
+            <a href="{% url 'herramienta_proyectos' herramienta.id %}" class="link-categorias">{{herramienta.nombre}}</a> 
+        {%endfor%}
+       
+</div>
+ 
+<section class="blog">
+
+        
+    {% for proyecto in proyectos %}
+    
+            <div class="card-blog-proyectos">
+                <div class="img-conteiner-proyecto">
+                    <img src="{{proyecto.imagen.url}}" alt="" class="img-blog">
+                </div>
+                <div class="card-cont">
+                    <h3 class="titulo-card" style="font-size:1.5em">{{proyecto.titulo}}</h3>
+                    <p class="p-blog">{{proyecto.contenido}}</p>
+                </div>
+                <h2 class="herramientas-proyecto">Herramientas</h2>
+                <ul class="lista-imgs-proyecto">
+                {% for herramienta in proyecto.herramientas.all %}
+                    <li class="imgs-proyecto"><img src="{{herramienta.imagen.url}}" alt="" class="img-blog"></li>
+                {% endfor %}
+                </ul>
+                
+                <div class="pie-card">
+                    {% if user.is_authenticated %}
+                    <a href="{{proyecto.proyecto.url}}" download style="text-decoration:none"><button class="dow-cur">Descargar Código</button></a>
+                    {% else %}
+                    <a href="{% url 'login'%}" style="text-decoration:none"><button class="dow-cur">Loguear para Descargar</button></a>
+                    {% endif %}
+                    <span class="actualizacion">{{proyecto.updated}}</span>
+                </div>
+            </div>  
+         
+    {% endfor %}       
+</section>     
+ 
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'home/base.html' %}
+
+{% load static %}
+
+{% block content%}
+
+    <section class="blog-total">
+        {% for blog in blogs %}
+            <div class="contenedor-blog-imagen">
+                <img src="{{blog.imagen.url}}" alt="" class="img-blog-grande">
+            </div>    
+            <div class="texto-blog" >   
+                <h2 class="titulo-blog">{{blog.titulo}}</h2>
+                <div class="autor-fecha">
+                    <span>By: {{blog.autor}}</span>
+                    <span>{{blog.updated}}</span>
+                </div>
+                <p class="resumen-blog">"{{blog.resumen}}"</p>
+                <p class="contenido-blog">{{blog.contenido}}</p>
+            </div>     
+        {% endfor %}       
+    </section>
+ 
+
+{% endblock %}
