@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
-"""
+
 
 from pathlib import Path
 import os
@@ -93,7 +93,7 @@ DATABASES = {
         )
     }
 
-"""
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -102,7 +102,6 @@ DATABASES = {
         },
     }
 }
-"""
 
 
 
@@ -168,7 +167,7 @@ EMAIL_PORT=587
 EMAIL_HOST_USER='danielmchachagua@gmail.com'
 EMAIL_HOST_PASSWORD='rgelachgbuylzgrk'
 
-
+"""
 
 
 
@@ -200,7 +199,7 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
-
+"""
 
 from pathlib import Path
 import os
@@ -217,7 +216,7 @@ SECRET_KEY = 'django-insecure-o$#k2q82ai6tr-n=iz7iec)a!5zpd3qek^xx=6n4vhnp3u4#de
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['54.190.18.243']
 
 
 # Application definition
@@ -342,4 +341,3 @@ EMAIL_PORT=587
 EMAIL_HOST_USER='danielmchachagua@gmail.com'
 EMAIL_HOST_PASSWORD='rgelachgbuylzgrk'
 
-"""
