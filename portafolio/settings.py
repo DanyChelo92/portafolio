@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
-
+"""
 
 from pathlib import Path
 import os
@@ -86,12 +86,19 @@ WSGI_APPLICATION = 'portafolio.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-
+"""
 DATABASES = {
     'default': dj_database_url.config(
         default='postgresql://postgres:postgres@localhost:5432/mysite',conn_max_age=600
         )
     }
+"""
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
 
 
@@ -157,7 +164,25 @@ EMAIL_PORT=587
 EMAIL_HOST_USER='danielmchachagua@gmail.com'
 EMAIL_HOST_PASSWORD='rgelachgbuylzgrk'
 
-"""
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -171,7 +196,7 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
-"""
+
 
 from pathlib import Path
 import os
@@ -186,7 +211,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-o$#k2q82ai6tr-n=iz7iec)a!5zpd3qek^xx=6n4vhnp3u4#de'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'RENDER' not in os.environ
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -313,3 +338,4 @@ EMAIL_PORT=587
 EMAIL_HOST_USER='danielmchachagua@gmail.com'
 EMAIL_HOST_PASSWORD='rgelachgbuylzgrk'
 
+"""
